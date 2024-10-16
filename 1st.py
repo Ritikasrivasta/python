@@ -1,21 +1,21 @@
-# Import Necessary Libraries
-import pygame  
-  
-# Initialize required modules
-pygame.init()  
+class A:
+	def __init__(self, a):
+		self.a = a
+	def __lt__(self, other):
+		if(self.a<other.a):
+			return "ob1 is less than ob2"
+		else:
+			return "ob2 is less than ob1"
+	def __eq__(self, other):
+		if(self.a == other.a):
+			return "Both are equal"
+		else:
+			return "Not equal"
+				
+ob1 = A(2)
+ob2 = A(3)
+print("Passed Values :", ob1.a, ob2.a)
+print(ob1 < ob2)
 
-# Setup window geometry
-screen = pygame.display.set_mode((400,100))  
-
-# Create a loop to run till the game is quit by the user
-done = False  
-  
-while not done: 
-
-	# Clear the event queue
-	for event in pygame.event.get():  
-		if event.type == pygame.QUIT:  
-			pygame.quit()
-	
-	# Make the changes visible
-	pygame.display.flip()  
+ob3 = A(4)
+ob4 = A(4)
